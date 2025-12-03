@@ -1,0 +1,14 @@
+chardet 
+pyodbc 
+unidecode 
+numpy==1.24.4
+pandas 
+azure-keyvault-secrets==4.7.0 
+azure-identity==1.15.0 
+azure-functions 
+azure-storage-blob
+azure-storage-file-share
+packaging==21.3
+pydantic==2.8.2
+supabase
+openpyxl
