@@ -72,4 +72,6 @@ jobs:
           app-name: 'ismart-data-pipeline-func'
           slot-name: 'Production'
           package: ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_DB04BB169D4240CCA75EB7EA7A7BFB91 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_6D273387FFC0453B89357EC3321408BD }}
+          sku: 'flexconsumption'
+        
