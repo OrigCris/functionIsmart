@@ -7,15 +7,13 @@ from sql_to_supabase import clear_supabase_table, insert_enriched_data
 
 app = func.FunctionApp()
 
-@app.function_name(name="letrus")
 @app.timer_trigger(schedule="0 0 6 * * *", arg_name="letrusTimer", run_on_startup=False, use_monitor=False)
 def func_letrus(letrusTimer: func.TimerRequest) -> None:
     job.process_aux()
     job.process_silver()
 
-@app.function_name(name="sql_to_supabase")
-@app.timer_trigger(schedule="0 0 * * * *", arg_name="myTimer", run_on_startup=True, use_monitor=False)
-def main(myTimer: func.TimerRequest) -> None:
+@app.timer_trigger(schedule="0 0 */2 * * *", arg_name="myTimer", run_on_startup=True, use_monitor=False)
+def func_sql_to_supabase(myTimer: func.TimerRequest) -> None:
     logging.info("⏰ Iniciando execução diária de múltiplas migrações")
 
     base_path = Path(__file__).parent
