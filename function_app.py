@@ -58,12 +58,12 @@ def func_letrus(letrusTimer: func.TimerRequest) -> None:
         df = pd.read_excel(BytesIO(file_bytes))
         
         df.columns = (
-            df.columns.str.strip()              # remove espaços no início/fim
-                    .str.normalize('NFKD')   # remove acentos
-                    .str.encode('ascii', errors='ignore')
-                    .str.decode('utf-8')
-                    .str.replace(' ', '_')   # troca espaço por _
-                    .str.replace(r'[^A-Za-z0-9_]', '', regex=True) # tira caracteres estranhos
+            df.columns.str.strip()                      # remove espaços no início/fim
+                .str.normalize('NFKD')                  # remove acentos
+                .str.encode('ascii', errors='ignore')
+                .str.decode('utf-8')
+                .str.replace(' ', '_')                  # troca espaço por _
+                .str.replace(r'[^A-Za-z0-9_]', '', regex=True) # tira caracteres estranhos
         )
 
 
