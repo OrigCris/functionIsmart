@@ -3,3 +3,10 @@
 # azure-monitor-opentelemetry
 
 azure-functions
+azure-keyvault-secrets==4.7.0
+azure-identity==1.15.0
+pyodbc
+openpyxl
+supabase
+azure-storage-blob
+pandas
