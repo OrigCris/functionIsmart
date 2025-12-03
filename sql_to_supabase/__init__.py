@@ -149,7 +149,3 @@ def insert_enriched_data(table_name: str, query: str) -> None:
     finally:
         if conn:
             conn.close()
-
-
-app = func.FunctionApp()
-
