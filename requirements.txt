@@ -10,3 +10,4 @@ openpyxl
 supabase
 azure-storage-blob
 pandas
+azure-functions-worker
