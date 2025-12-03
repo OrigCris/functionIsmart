@@ -1,12 +1,11 @@
 import logging
 import azure.functions as func
+from letrus_job import job
 
 app = func.FunctionApp()
 
-@app.timer_trigger(schedule="0 0 6 * * *", arg_name="myTimer", run_on_startup=False,
-              use_monitor=False) 
-def letrus(myTimer: func.TimerRequest) -> None:
-    if myTimer.past_due:
-        logging.info('The timer is past due!')
-
-    logging.info('Python timer trigger function executed.')
+@app.function_name(name="letrus")
+@app.timer_trigger(schedule="0 0 6 * * *", arg_name="letrusTimer", run_on_startup=False, use_monitor=False)
+def func_letrus(letrusTimer: func.TimerRequest) -> None:
+    job.process_aux()
+    job.process_silver()
